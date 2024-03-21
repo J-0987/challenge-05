@@ -40,21 +40,41 @@
 
 </button>
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModal Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="formModal Label">Add Task</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
-        <!-- Here goes Task Title, Task Due Date, and Task Description -->
-        ...
+        <!-- Here goes Task Title, Task Due Date, and Task. Done with adding a form to the modal box. -->
+       <form action="">
+        <!-- Tried form floating from a yoututbe video, but didn't look good. Need more practice to accomplish -->
+        <div class="mb-6">
+          <label for="taskTitle" class="form-label">Task Title</label>
+          <input type="text" class="form-control" id="taskTitle" aria-describedby="task title">
+        </div>
+<!-- Date -->
+
+        <div class="mb-6">
+          <label for="taskDueDate" class="form-label">Task Due Date</label>
+          <input type="text" class="form-control" id="taskDueDate" aria-describedby="task title">
+        </div> 
+        
+<!-- Task description -->
+        <div class="mb-3">
+          <label for="taskDescription" class="form-label">Task Description</label>
+          <textarea class="form-control" id="taskDescription" rows="3"></textarea>
+        </div>
+        
+       </form>
       </div>
+      <!-- Add Task button. How to style to make it green? -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add Task</button>
+      
       </div>
     </div>
   </div>
@@ -100,11 +120,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-    <!-- Need to go through this again -->
+    <!-- Need to go through this again. datepicker -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 
-  <!-- dayJs for datepicker -->
+  <!-- dayjs -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 <!-- Custom JS -->
