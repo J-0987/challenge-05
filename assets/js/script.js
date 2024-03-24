@@ -1,6 +1,7 @@
 // Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
+let addTaskBtn = $('#add-task-btn')
 
 // Todo: create a function to generate a unique task id. Is this nextId? why??
 function generateTaskId() {
@@ -14,15 +15,6 @@ function generateTaskId() {
 // create div with elements for taskTitle, taskDueDate, and taskDescription. Delte button also needed
 function createTaskCard(task) {
   
-  //copied from student mini project
-    const taskCard = $('<div>')
-      .addClass('card project-card draggable my-3')
-      .attr('data-project-id', project.id);
-    const cardHeader = $('<div>').addClass('card-header h4').text(project.name);
-    const cardHeaderMy = $('<div>');
-    cardHeaderMy.addClass('card-header h4');
-    cardHeader.text(project.name);
-  
 
 }
 
@@ -35,8 +27,9 @@ function renderTaskList() {
 }
 
 // Todo: create a function to handle adding a new task
-function handleAddTask(event){
-
+function handleAddTask(e){
+  e.preventDefault()
+  
 }
 
 // Todo: create a function to handle deleting a task

@@ -31,7 +31,7 @@
   <!-- The green Add Task button to trigger modal form -Buitton trigger modal -->
   <div class="container">
     <div class="text-center mb-5">
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Create Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
 
@@ -44,16 +44,16 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="formModal Label">Add Task</h5>
+        <h5 class="modal-title" id="formModal Label">Create Task</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
         <!-- Here goes Task Title, Task Due Date, and Task. Done with adding a form to the modal box. -->
 
-        <!-- WHat goes in action? -->
-       <form action="">
-        <!-- Tried form floating from a yoututbe video, but didn't look good. Need more practice to accomplish -->
+      
+       <form>
+  
         <div class="mb-6">
           <label for="taskTitle" class="form-label">Task Title</label>
           <input type="text" class="form-control" id="taskTitle" aria-describedby="task title">
@@ -75,7 +75,7 @@
       </div>
       <!-- Add Task button. How to style to make it green? -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add Task</button>
+        <button id="add-task-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add Task</button>
       
       </div>
     </div>
