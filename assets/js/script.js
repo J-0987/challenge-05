@@ -1,8 +1,57 @@
 // Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
-let addTaskBtn = $('#add-task-btn')
+let taskTitleInput = $('#taskTitle');
+let taskDueDateInput = $('#taskDueDate');
+let taskDescriptionInput = $('taskDescription');
+let addTaskBtn = $('#add-task-btn');
 
+const taskCardInput = {
+  title: taskTitleInput.val(),
+  dueDate: taskDueDateInput.val(),
+  description: taskDescriptionInput.val()
+};
+
+// upon clicking thr addtaskbutton, I want the information stored in an object and into local storage
+function setToLocalStorage(taskCardInput){
+  
+  
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(taskCardInput);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function getTasksFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("tasks")) || [];
+}
+
+addTaskBtn.click(function() {
+  const task = {
+      title: taskTitleInput.val(),
+      dueDate: taskDueDateInput.val(),
+      description: taskDescriptionInput.val()
+  };
+
+  setToLocalStorageTaskToLocalStorage(task);
+  renderTaskCard(task);
+ 
+
+  // Clear inputs
+  taskTitleInput.val("");
+  taskDueDateInput.val("");
+  taskDescriptionInput.val("");
+});
+
+
+function renderTaskCard(task) {
+  const taskList = $("#todo-tasks");
+  const taskCard = $("<div>").addClass("task-card").attr("draggable", "true").html(`
+      <h3>${task.title}</h3>
+      <p>Due Date: ${task.dueDate}</p>
+      <p>${task.description}</p>
+  `);
+  taskList.append(taskCard);
+}
 // Todo: create a function to generate a unique task id. Is this nextId? why??
 function generateTaskId() {
  let taskId = new Date().getTime();
@@ -27,10 +76,7 @@ function renderTaskList() {
 }
 
 // Todo: create a function to handle adding a new task
-function handleAddTask(e){
-  e.preventDefault()
-  
-}
+
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
